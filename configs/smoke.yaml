@@ -1,0 +1,10 @@
+seed: 2026
+data: data/raw/SP500_master_panel.csv
+output_dir: results/smoke
+features: [momentum_12_1, price_to_book, px_to_sales, oper_margin, market_cap, vix, move, credit_spread, ust10y, curve_2y10y, fed_funds, bid_ask_spread]
+walk_forward: {train_months: 60, purge_months: 1, test_months: 6, step_months: 1000, min_test_months: 6}
+portfolio: {quintiles: 5, illiquid_percentile: 0.05, short_fee_annual: 0.005, position_cap: 0.02}
+cost: {impact_coefficient: 0.10, regime_lambda_max: 2.5, regularizer: 0.002}
+model: {states: 3, lookback: 6, hidden: 16, heads: 4, dropout: 0.10, epochs: 1, batch_months: 4, learning_rate: 0.001, weight_decay: 0.0001}
+models: [B1, B3, B4_LSTM, B5_RF, I1, I2, A1, A2, A3, A4]
+crisis_windows: []

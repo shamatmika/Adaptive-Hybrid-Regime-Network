@@ -1,0 +1,14 @@
+# Local environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# External/raw data (not committed)
+data/raw/
+
+# Generated experiment outputs
+results/*
+!results/.gitkeep
